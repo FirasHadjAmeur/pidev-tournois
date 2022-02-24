@@ -1,0 +1,11 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}New Commantaires{% endblock %}
+
+{% block body %}
+    <h1>Create new Commantaires</h1>
+
+    {{ include('commantaires/_form.html.twig') }}
+
+    <a href="{{ path('commantaires_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}Esprit FC - Dashboard{% endblock %}</title>
+
+    <!-- Custom fonts for this template-->
+    {% block css%}
+    <link href="{{asset('back/vendor/fontawesome-free/css/all.min.css')  }}" rel="stylesheet" type="text/css">
+    <link href="{{asset('back/https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i')  }}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{asset('back/css/sb-admin-2.min.css')  }}" rel="stylesheet">
+
+    <style type="text/css">/* Chart.js */
+        @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+    {% endblock %}
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+        <!-- Sidebar - Brand -->
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
+            <div class="sidebar-brand-icon rotate-n-15">
+                <i class="fas fa-laugh-wink"></i>
+            </div>
+            <div class="sidebar-brand-text mx-3">Esprit FC</div>
+        </a>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0">
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+            <a class="nav-link" href="{{ path('backindex') }}">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span>Dashboard</span></a>
+        </li>
+
+        <!-- Divider -->
+
+
+        <!-- Heading -->
+
+
+        <!-- Nav Item - Pages Collapse Menu -->
+
+
+        <!-- Nav Item - Utilities Collapse Menu -->
+
+
+        <!-- Divider -->
+
+
+        <!-- Heading -->
+
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+               aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Gestions</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Gestion Utilisateurs:</h6>
+                    <a class="collapse-item" href="">Utilisateurs</a>
+                    <a class="collapse-item" href="">Administrateurs</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Gestion Joueurs:</h6>
+                    <a class="collapse-item" href="">Joueurs</a>
+                    <a class="collapse-item" href="{{ path('equipes_index') }}">Equipes</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Gestion Tournois:</h6>
+                    <a class="collapse-item" href="{{ path('tournois_index') }}">Tournois</a>
+                    <a class="collapse-item" href="{{ path('matchs_index') }}">Matchs</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Gestion Materiels:</h6>
+                    <a class="collapse-item" href="">Materiels</a>
+                    <a class="collapse-item" href="">Categorie Materiels</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Gestion Entrainement:</h6>
+                    <a class="collapse-item" href="">Exercice</a>
+                    <a class="collapse-item" href="">Categorie Exercice</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Gestion Forum:</h6>
+                    <a class="collapse-item" href="{{ path('publications_index') }}">Publications</a>
+                    <a class="collapse-item" href="{{ path('commantaires_index') }}">commentaires</a>
+                    <div class="collapse-divider"></div>
+
+                    <h6 class="collapse-header">Gestion Produits:</h6>
+                    <a class="collapse-item" href="">Produits</a>
+                    <a class="collapse-item" href="">Commandes</a>
+                    <a class="collapse-item" href="">Panier</a>
+
+                </div>
+            </div>
+        </li>
+
+
+
+
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            {% block body %}
+
+                {% endblock %}
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+
+        <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+
+<!-- Bootstrap core JavaScript-->
+{% block js %}
+<script src="{{asset('back/vendor/jquery/jquery.min.js')  }}"></script>
+    <script src="{{asset('back/vendor/bootstrap/js/bootstrap.bundle.min.js')  }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{asset('back/vendor/jquery-easing/jquery.easing.min.js')  }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{asset('back/js/sb-admin-2.min.js')  }}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{asset('back/vendor/chart.js/Chart.min.js')  }}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{{asset('back/js/demo/chart-area-demo.js')  }}"></script>
+    <script src="{{asset('back/js/demo/chart-pie-demo.js')  }}"></script>
+{% endblock %}
+
+
+</body></html>

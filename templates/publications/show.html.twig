@@ -1,0 +1,50 @@
+{% extends 'base-back.html.twig' %}
+
+{% block title %}Publications{% endblock %}
+
+{% block body %}
+    <h1>Publications</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ publication.id }}</td>
+            </tr>
+            <tr>
+                <th>TitrePub</th>
+                <td>{{ publication.titrePub }}</td>
+            </tr>
+            <tr>
+                <th>ContenuPub</th>
+                <td>{{ publication.contenuPub }}</td>
+            </tr>
+            <tr>
+                <th>DatePub</th>
+                <td>{{ publication.datePub ? publication.datePub|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>AutheurPub</th>
+                <td>{{ publication.autheurPub }}</td>
+            </tr>
+            <tr>
+                <th>ImagePub</th>
+                <td>{{ publication.imagePub }}</td>
+            </tr>
+            <tr>
+                <th>NbrLikes</th>
+                <td>{{ publication.nbrLikes }}</td>
+            </tr>
+            <tr>
+                <th>NbrDislikes</th>
+                <td>{{ publication.nbrDislikes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('publications_index') }}">back to list</a>
+
+    <a href="{{ path('publications_edit', {'id': publication.id}) }}">edit</a>
+
+    {{ include('publications/_delete_form.html.twig') }}
+{% endblock %}
